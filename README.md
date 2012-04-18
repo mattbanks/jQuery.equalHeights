@@ -16,7 +16,7 @@ If using @font-face or Google Web Fonts, wrap selector in a `setTimeout` for 100
 
 Tested with jQuery 1.7.x.
 
-Works in IE6+, Chrome 14+, Safari 4+, Firefox 3.5+, Opera 10+.
+Works in IE6+, Chrome 14+, Safari 4+, Firefox 3.0+, Opera 10+.
 
 ## Examples
 
