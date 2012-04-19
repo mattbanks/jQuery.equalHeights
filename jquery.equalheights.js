@@ -8,13 +8,17 @@
  *
  * @version 1.0
  */
-$.fn.equalHeights = function() {
-	var maxHeight = 0;
-	$(this).each(function(index){
-	var height = $(this).height();
-		if (maxHeight < height) {
-			maxHeight = height;
-		}
-	});
-	$(this).height(maxHeight);
-};
+(function($) {
+
+	$.fn.equalHeights = function() {
+		var maxHeight = 0;
+		$(this).each(function(index){
+		var height = $(this).height();
+			if (maxHeight < height) {
+				maxHeight = height;
+			}
+		});
+		$(this).height(maxHeight);
+	};
+
+})(jQuery);
