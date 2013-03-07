@@ -6,20 +6,21 @@
  * Uses the same license as jQuery, see:
  * http://docs.jquery.com/License
  *
- * @version 1.1
+ * @version 1.2
  */
 (function($) {
 
 	$.fn.equalHeights = function() {
-		var maxHeight = 0;
+		var maxHeight = 0,
+            $this = $(this);
 
-		$(this).each( function() {
-			var height = $(this).height();
+		$this.each( function() {
+			var height = $(this).innerHeight();
 
 			if ( height > maxHeight ) { maxHeight = height; }
 		});
 
-		$(this).height(maxHeight);
+		$this.height(maxHeight);
 	};
 
 })(jQuery);

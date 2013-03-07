@@ -1,8 +1,8 @@
 # jQuery Simple Equal Heights
 
-Version 1.1
+Version 1.2
 
-## Summary 
+## Summary
 
 Simple jQuery plugin to equalize heights of multiple elements on a page.
 
@@ -14,7 +14,7 @@ Matt Banks ( [@mattbanks](http://twitter.com/mattbanks) / [kernelcreativemedia.c
 
 Include `jquery.equalheights.min.js` after calling jQuery in the footer. Alternatively, include in your `plugins.js` file if using [HTML5 Boilerplate](http://html5boilerplate.com).
 
-	$('.yourelements').equalHeights(); 
+	$('.yourelements').equalHeights();
 
 Select whatever elements need equal height.
 
@@ -31,6 +31,11 @@ Works in IE6+, Chrome 14+, Safari 4+, Firefox 3.0+, Opera 10+.
 See `example.html` in examples folder.
 
 ### Changelog
+
+#### Version 1.2
+
+* properly cache `$(this)` since it's called twice in the main function
+* calculate height by `innerheight()` instead of `height()` to include any padding
 
 #### Version 1.1
 
