@@ -1,6 +1,6 @@
 # jQuery Simple Equal Heights
 
-Version 1.2
+Version 1.3
 
 ## Summary
 
@@ -31,6 +31,10 @@ Works in IE6+, Chrome 14+, Safari 4+, Firefox 3.0+, Opera 10+.
 See `example.html` in examples folder.
 
 ### Changelog
+
+#### Version 1.3
+
+* properly return the jQuery object to allow chaining
 
 #### Version 1.2
 
