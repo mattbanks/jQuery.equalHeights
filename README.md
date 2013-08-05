@@ -6,7 +6,7 @@ Version 1.4
 
 Simple jQuery plugin to equalize heights of multiple elements on a page.
 
-## Contributors:
+## Author
 
 Matt Banks ( [@mattbanks](http://twitter.com/mattbanks) / [kernelcreativemedia.com](http://www.kernelcreativemedia.com) / [mattbanks.me](http://www.mattbanks.me) )
 
