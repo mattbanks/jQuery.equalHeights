@@ -1,6 +1,6 @@
 # jQuery Simple Equal Heights
 
-Version 1.3
+Version 1.4
 
 ## Summary
 
@@ -14,9 +14,17 @@ Matt Banks ( [@mattbanks](http://twitter.com/mattbanks) / [kernelcreativemedia.c
 
 Include `jquery.equalheights.min.js` after calling jQuery in the footer. Alternatively, include in your `plugins.js` file if using [HTML5 Boilerplate](http://html5boilerplate.com).
 
+### Auto Initialize
+
+Add `data-heights="equal"` and `data-targets="MYELEMENTS"` to the parent container, where MYELEMENTS is div, section, whatever you'd like. [See the example](https://github.com/mattbanks/jQuery.equalHeights/blob/master/example/example.html) for more information.
+
+### Manually Initialize
+
 	$('.yourelements').equalHeights();
 
 Select whatever elements need equal height.
+
+### Caveats
 
 If using @font-face or Google Web Fonts, you may need to wrap the function call in a `setTimeout` for 100ms-200ms (`jQuery.height()` needs to fire after the font is rendered to properly calculate the height).
 
@@ -30,7 +38,15 @@ Works in IE6+, Chrome 14+, Safari 4+, Firefox 3.0+, Opera 10+.
 
 See `example.html` in examples folder.
 
+## Contributors
+
+* [betweenbrain](https://github.com/betweenbrain)
+
 ### Changelog
+
+#### Version 1.4
+
+* allow auto initialization with `data-heights` and `data-targets` (props [betweenbrain](https://github.com/betweenbrain))
 
 #### Version 1.3
 
