@@ -1,6 +1,6 @@
 # jQuery Simple Equal Heights
 
-Version 1.4.1
+Version 1.4.2
 
 ## Summary
 
@@ -45,8 +45,13 @@ See `example.html` in examples folder.
 ## Contributors
 
 * [betweenbrain](https://github.com/betweenbrain)
+* [Korri](https://github.com/Korri)
 
 ### Changelog
+
+#### Version 1.4.2
+
+* allow multiple `data-heights` elements per page (props [Korri](https://github.com/Korri))
 
 #### Version 1.4.1
 
