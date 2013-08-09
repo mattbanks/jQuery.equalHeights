@@ -24,8 +24,10 @@
     };
 
     // auto-initialize plugin
-    var target = $('[data-heights="equal"]').attr('data-targets'),
-        init = '[data-heights="equal"] ' + target;
-    $(init).equalHeights();
+    $('[data-heights="equal"]').each(function(){
+        var $this = $(this),
+            target = $this.data('targets');
+        $this.find(target).equalHeights();
+    });
 
 })(jQuery);
