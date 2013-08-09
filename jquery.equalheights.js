@@ -6,7 +6,7 @@
  * Uses the same license as jQuery, see:
  * http://docs.jquery.com/License
  *
- * @version 1.3
+ * @version 1.4
  */
 (function($) {
 
@@ -24,8 +24,10 @@
     };
 
     // auto-initialize plugin
-    var target = $('[data-heights="equal"]').attr('data-targets'),
-        init = '[data-heights="equal"] ' + target;
-    $(init).equalHeights();
+    $('[data-heights="equal"]').each(function(){
+        var $this = $(this),
+            target = $this.data('targets');
+        $this.find(target).equalHeights();
+    });
 
 })(jQuery);
