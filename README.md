@@ -1,6 +1,6 @@
 # jQuery Simple Equal Heights
 
-Version 1.4
+Version 1.4.0
 
 ## Summary
 
@@ -13,6 +13,10 @@ Matt Banks ( [@mattbanks](http://twitter.com/mattbanks) / [kernelcreativemedia.c
 ## Usage
 
 Include `jquery.equalheights.min.js` after calling jQuery in the footer. Alternatively, include in your `plugins.js` file if using [HTML5 Boilerplate](http://html5boilerplate.com).
+
+Alternatively, install with [bower](https://github.com/bower/bower):
+
+	bower install jquery.equalheights
 
 ### Auto Initialize
 
