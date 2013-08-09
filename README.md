@@ -1,6 +1,6 @@
 # jQuery Simple Equal Heights
 
-Version 1.4.0
+Version 1.4.1
 
 ## Summary
 
@@ -47,6 +47,10 @@ See `example.html` in examples folder.
 * [betweenbrain](https://github.com/betweenbrain)
 
 ### Changelog
+
+#### Version 1.4.1
+
+* add bower support
 
 #### Version 1.4
 
