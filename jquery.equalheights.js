@@ -24,9 +24,9 @@
     };
 
     // auto-initialize plugin
-    $('[data-heights="equal"]').each(function(){
+    $('[data-equal]').each(function(){
         var $this = $(this),
-            target = $this.data('targets');
+            target = $this.data('equal');
         $this.find(target).equalHeights();
     });
 
