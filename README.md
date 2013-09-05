@@ -1,6 +1,6 @@
 # jQuery Simple Equal Heights
 
-Version 1.4.2
+Version 1.5.0
 
 ## Summary
 
@@ -20,7 +20,7 @@ Alternatively, install with [bower](https://github.com/bower/bower):
 
 ### Auto Initialize
 
-Add `data-heights="equal"` and `data-targets="MYELEMENTS"` to the parent container, where MYELEMENTS is div, section, whatever you'd like. [See the example](https://github.com/mattbanks/jQuery.equalHeights/blob/master/example/example.html) for more information.
+Add `data-equal="MYELEMENTS"` to the parent container, where MYELEMENTS is div, section, li, whatever you'd like. [See the example](https://github.com/mattbanks/jQuery.equalHeights/blob/master/example/example.html) for more information.
 
 ### Manually Initialize
 
@@ -46,8 +46,14 @@ See `example.html` in examples folder.
 
 * [betweenbrain](https://github.com/betweenbrain)
 * [Korri](https://github.com/Korri)
+* [pafnuty](https://github.com/pafnuty)
 
 ### Changelog
+
+#### Version 1.5.0
+
+* added Grunt for linting and minification
+* change auto-initialization to use a single data attribute (props [pafnuty](https://github.com/pafnuty))
 
 #### Version 1.4.2
 
