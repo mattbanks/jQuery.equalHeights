@@ -1,6 +1,6 @@
 # jQuery Simple Equal Heights
 
-Version 1.5.1
+Version 1.5.2
 
 ## Summary
 
@@ -49,6 +49,10 @@ See `example.html` in examples folder.
 * [pafnuty](https://github.com/pafnuty)
 
 ### Changelog
+
+#### Version 1.5.2
+
+* version bump for bower
 
 #### Version 1.5.1
 

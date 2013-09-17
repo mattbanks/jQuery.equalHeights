@@ -1,6 +1,6 @@
 {
   "name": "jquery.equalHeights",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "dependencies": {
     "load-grunt-tasks": "~0.1.0"
   },
