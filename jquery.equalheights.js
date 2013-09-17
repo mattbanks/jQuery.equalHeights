@@ -6,7 +6,7 @@
  * Uses the same license as jQuery, see:
  * http://docs.jquery.com/License
  *
- * @version 1.5.0
+ * @version 1.5.1
  */
 (function($) {
 
@@ -20,7 +20,7 @@
             if ( height > maxHeight ) { maxHeight = height; }
         });
 
-        return $this.height(maxHeight);
+        return $this.css('height', maxHeight);
     };
 
     // auto-initialize plugin

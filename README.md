@@ -1,6 +1,6 @@
 # jQuery Simple Equal Heights
 
-Version 1.5.0
+Version 1.5.1
 
 ## Summary
 
@@ -49,6 +49,10 @@ See `example.html` in examples folder.
 * [pafnuty](https://github.com/pafnuty)
 
 ### Changelog
+
+#### Version 1.5.1
+
+* fix bug with $.height() in jQuery 1.8+ with double padding when `box-siding` is set to `border-box`
 
 #### Version 1.5.0
 
