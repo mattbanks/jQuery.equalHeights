@@ -56,7 +56,7 @@ See `example.html` in examples folder.
 
 #### Version 1.5.1
 
-* fix bug with $.height() in jQuery 1.8+ with double padding when `box-siding` is set to `border-box`
+* fix bug with $.height() in jQuery 1.8+ with double padding when `box-sizing` is set to `border-box`
 
 #### Version 1.5.0
 
