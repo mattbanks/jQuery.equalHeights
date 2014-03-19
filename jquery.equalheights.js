@@ -23,13 +23,14 @@
         return $this.css('height', maxHeight);
     };
 
-    // auto-initialize plugin
+    // auto-initialize plugin with data-equal attribute
     $('[data-equal]').each(function(){
         var $this = $(this),
             target = $this.data('equal');
         return $this.find(target).equalHeights();
     });
 
+    // auto-initialize plugin with class of equalheight
     $('.equalheight').parent().each(function() {
         return $(this).find('.equalheight').equalHeights();
     });
