@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 1.6.0
+
+* allow auto initialization with equalheight class
+* make plugin responsive
+* add contributing docs
+* move changelog to separate file to cleanup readme
+* update grunt dependencies
+* move example to gh-pages branch
+
 ## Version 1.5.2
 
 * version bump for bower
