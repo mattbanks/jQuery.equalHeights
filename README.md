@@ -50,7 +50,7 @@ Works in IE6+, Chrome 14+, Safari 4+, Firefox 3.0+, Opera 10+.
 
 ## Examples
 
-[See the example](https://github.com/mattbanks/jQuery.equalHeights/blob/master/example/example.html) for more information.
+[See examples](http://mattbanks.github.io/jQuery.equalHeights/) for more information.
 
 ## Contributing
 
