@@ -27,7 +27,11 @@
     $('[data-equal]').each(function(){
         var $this = $(this),
             target = $this.data('equal');
-        $this.find(target).equalHeights();
+        return $this.find(target).equalHeights();
+    });
+
+    $('.equalheight').parent().each(function() {
+        return $(this).find('.equalheight').equalHeights();
     });
 
 })(jQuery);
