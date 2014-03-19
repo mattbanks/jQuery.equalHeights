@@ -34,7 +34,13 @@ Select whatever elements need equal height.
 
 ### Responsive
 
-The plugin is responsive and will re-call itself whenever the window is resized, ensuring the elements remain the same size during browser changes.
+If you use auto initialzation, the plugin is responsive and will re-call itself whenever the window is resized, ensuring the elements remain the same size during browser changes.
+
+If you use manual initialization, you'll have to call the function manually when the window is resized:
+
+	$(window).resize(function() {
+		$('.yourelements').equalHeights();
+	});
 
 ### Caveats
 
