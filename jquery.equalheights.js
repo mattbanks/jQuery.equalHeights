@@ -12,27 +12,27 @@
 
     $.fn.equalHeights = function(options) {
         var maxHeight = 0,
-            options = options || {},
             $this = $(this),
             equalHeightsFn = function() {
                 var height = $(this).innerHeight();
     
                 if ( height > maxHeight ) { maxHeight = height; }
             };
+        options = options || {};
+
+        $this.each(equalHeightsFn);
 
         if(options.wait) {
-            var loop = setInveral(function() {
+            var loop = setInterval(function() {
                 if(maxHeight > 0) {
-                    clearInverval(loop);
+                    clearInterval(loop);
                     return $this.css('height', maxHeight);
                 }
                 $this.each(equalHeightsFn);
             }, 100);
+        } else {
+            return $this.css('height', maxHeight);
         }
-
-        $this.each(equalHeightsFn);
-
-        return $this.css('height', maxHeight);
     };
 
     // auto-initialize plugin
