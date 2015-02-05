@@ -14,7 +14,7 @@
         var maxHeight = 0,
             options = options || {},
             $this = $(this),
-            equalHeight = function() {
+            equalHeightsFn = function() {
                 var height = $(this).innerHeight();
     
                 if ( height > maxHeight ) { maxHeight = height; }
@@ -26,11 +26,11 @@
                     clearInverval(loop);
                     return $this.css('height', maxHeight);
                 }
-                $this.each(equalHeights);
+                $this.each(equalHeightsFn);
             }, 100);
         }
 
-        $this.each(equalHeights);
+        $this.each(equalHeightsFn);
 
         return $this.css('height', maxHeight);
     };
