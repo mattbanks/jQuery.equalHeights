@@ -6,6 +6,6 @@
   	"jquery": ">=1.7"
   },
   "main": [
-    "jquery.equalHeights.js"
+    "jquery.equalheights.js"
   ]
 }
