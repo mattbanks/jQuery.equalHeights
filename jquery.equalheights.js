@@ -10,17 +10,29 @@
  */
 (function($) {
 
-    $.fn.equalHeights = function() {
+    $.fn.equalHeights = function(options) {
         var maxHeight = 0,
-            $this = $(this);
+            $this = $(this),
+            equalHeightsFn = function() {
+                var height = $(this).innerHeight();
+    
+                if ( height > maxHeight ) { maxHeight = height; }
+            };
+        options = options || {};
 
-        $this.each( function() {
-            var height = $(this).innerHeight();
+        $this.each(equalHeightsFn);
 
-            if ( height > maxHeight ) { maxHeight = height; }
-        });
-
-        return $this.css('height', maxHeight);
+        if(options.wait) {
+            var loop = setInterval(function() {
+                if(maxHeight > 0) {
+                    clearInterval(loop);
+                    return $this.css('height', maxHeight);
+                }
+                $this.each(equalHeightsFn);
+            }, 100);
+        } else {
+            return $this.css('height', maxHeight);
+        }
     };
 
     // auto-initialize plugin
