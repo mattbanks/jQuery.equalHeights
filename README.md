@@ -24,9 +24,21 @@ Add `data-equal="MYELEMENTS"` to the parent container, where MYELEMENTS is div, 
 
 ### Manually Initialize
 
-	$('.yourelements').equalHeights();
+	$('.yourelements').equalHeights([options]);
 
-Select whatever elements need equal height.
+Select whatever elements need equal height. You can optionally pass in an object with one or more options
+
+#### `wait`
+
+If you pass in `{wait: true}` `equalHeights` is executed with a delay of 100ms. This adds additional time in which the content can change – for example when fonts are loaded and applied or when the content is changed dynamically.
+
+	$('.yourelements').equalHeights({wait: true})
+
+#### `watch`
+
+Pass in `{watch: true}` if you want to execute `equalHeights` on resize. This can improve the responsiveness of the elements with equalized heights.
+
+	$('.yourelements').equalHeights({watch: true})
 
 ### Caveats
 
