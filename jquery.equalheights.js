@@ -9,6 +9,15 @@
  * @version 1.5.1
  */
 (function($) {
+    
+    var watched = [];
+    $(window).on("resize", function () {
+        for (var i = 0, l = watched.length; i < l; i++) {
+            if (watched[i]) {
+                $(watched[i]).css("height", "auto").equalHeights()
+            }
+        }
+    })
 
     $.fn.equalHeights = function(options) {
         var maxHeight = 0,
@@ -22,7 +31,7 @@
 
         $this.each(equalHeightsFn);
 
-        if(options.wait) {
+        if (options.wait) {
             var loop = setInterval(function() {
                 if(maxHeight > 0) {
                     clearInterval(loop);
@@ -30,6 +39,8 @@
                 }
                 $this.each(equalHeightsFn);
             }, 100);
+        } else if (options.watch) {
+            watched.push(this)
         } else {
             return $this.css('height', maxHeight);
         }
