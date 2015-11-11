@@ -28,13 +28,13 @@ Add `data-equal="MYELEMENTS"` to the parent container, where MYELEMENTS is div, 
 
 Select whatever elements need equal height. You can optionally pass in an object with one or more options
 
-#### `wait`
+#### Option: `wait`
 
-If you pass in `{wait: true}` `equalHeights` is executed with a delay of 100ms. This adds additional time in which the content can change – for example when fonts are loaded and applied or when the content is changed dynamically.
+If you pass in `{wait: true}` your elements' height will only be equalized if they have layout.
 
 	$('.yourelements').equalHeights({wait: true})
 
-#### `watch`
+#### Option: `watch`
 
 Pass in `{watch: true}` if you want to execute `equalHeights` on resize. This can improve the responsiveness of the elements with equalized heights.
 
@@ -42,7 +42,7 @@ Pass in `{watch: true}` if you want to execute `equalHeights` on resize. This ca
 
 ### Caveats
 
-If using @font-face or Google Web Fonts, you may need to wrap the function call in a `setTimeout` for 100ms-200ms (`jQuery.height()` needs to fire after the font is rendered to properly calculate the height).
+If using @font-face or Google Web Fonts, you may need to wrap the function call in a `setTimeout` for 100ms-200ms or call it on `window` `load` (`jQuery.height()` needs to fire after the font is rendered to properly calculate the height). Otherwise even the `wait` option could fail here as the element might be rendered and have layout before the fonts are loaded and applied.
 
 ## Requirements/Browsers
 
