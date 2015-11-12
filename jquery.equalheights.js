@@ -47,10 +47,12 @@
     };
 
     // auto-initialize plugin
-    $('[data-equal]').each(function(){
-        var $this = $(this),
-            target = $this.data('equal');
-        $this.find(target).equalHeights();
+    $(document).on("ready", function() {
+       $('[data-equal]').each(function(){
+            var $this = $(this),
+                target = $this.data('equal');
+            $this.find(target).equalHeights();
+        }); 
     });
 
 })(jQuery);
