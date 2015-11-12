@@ -31,7 +31,7 @@ Select whatever elements need equal height. You can optionally pass in an object
 
 #### Option: `wait`
 
-If you pass in `{wait: true}` your elements' height will only be equalized if they have layout.
+If you pass in `{wait: true}` your elements' height will only be equalized as soon as they have layout.
 
 	$('.yourelements').equalHeights({wait: true})
 
