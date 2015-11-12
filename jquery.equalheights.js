@@ -9,12 +9,12 @@
  * @version 1.5.1
  */
 (function($) {
-    
+
     var watched = [];
-    $(window).on("resize", function () {
+    $(window).on('resize', function () {
         for (var i = 0, l = watched.length; i < l; i++) {
             if (watched[i]) {
-                $(watched[i]).css("height", "auto").equalHeights()
+                $(watched[i]).css('height', 'auto').equalHeights()
             }
         }
     })
@@ -24,12 +24,16 @@
             $this = $(this),
             equalHeightsFn = function() {
                 var height = $(this).innerHeight();
-    
+
                 if ( height > maxHeight ) { maxHeight = height; }
             };
         options = options || {};
 
         $this.each(equalHeightsFn);
+
+        if (options.watch) {
+            watched.push(this)
+        }
 
         if (options.wait) {
             var loop = setInterval(function() {
@@ -39,20 +43,20 @@
                 }
                 $this.each(equalHeightsFn);
             }, 100);
-        } else if (options.watch) {
-            watched.push(this)
         } else {
             return $this.css('height', maxHeight);
         }
     };
 
     // auto-initialize plugin
-    $(document).on("ready", function() {
+    $(document).on('ready', function() {
        $('[data-equal]').each(function(){
             var $this = $(this),
+                wait = $this.data('equal-wait'),
+                watch = $this.data('equal-watch'),
                 target = $this.data('equal');
-            $this.find(target).equalHeights();
-        }); 
+            $this.find(target).equalHeights({'wait': wait, 'watch': watch});
+        });
     });
 
 })(jQuery);
