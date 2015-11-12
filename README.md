@@ -21,6 +21,7 @@ Alternatively, install with [bower](https://github.com/bower/bower):
 ### Auto Initialize
 
 Add `data-equal="MYELEMENTS"` to the parent container, where MYELEMENTS is div, section, li, whatever you'd like. [See the example](https://github.com/mattbanks/jQuery.equalHeights/blob/master/example/example.html) for more information.
+You can optioanlly specify the options by setting `data-equal-wait="true"` and `data-equal-watch="true"`.
 
 ### Manually Initialize
 
