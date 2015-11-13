@@ -31,7 +31,7 @@
 
         $this.each(equalHeightsFn);
 
-        if (options.watch || option.equalWatch) {
+        if (options.watch || options.equalWatch) {
             watched.push(this)
         }
 
