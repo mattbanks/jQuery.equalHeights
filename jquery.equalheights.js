@@ -6,7 +6,7 @@
  * Uses the same license as jQuery, see:
  * http://docs.jquery.com/License
  *
- * @version 1.5.1
+ * @version 1.5.2
  */
 (function($) {
 
@@ -31,11 +31,20 @@
 
         $this.each(equalHeightsFn);
 
-        if (options.watch) {
+        if (options.watch || option.equalWatch) {
             watched.push(this)
         }
 
-        if (options.wait) {
+        if (options.unwatch || options.equalUnwatch) {
+            for (var i = 0, l = watched.length, res = []; i < l; i++) {
+                if (watched[i].length && !$this.is(watched[i])) {
+                    res.push(watched[i]);
+                }
+            }
+            watched = res;
+        }
+
+        if (options.wait || options.equalWait) {
             var loop = setInterval(function() {
                 if(maxHeight > 0) {
                     clearInterval(loop);
@@ -52,10 +61,9 @@
     $(document).on('ready', function() {
        $('[data-equal]').each(function(){
             var $this = $(this),
-                wait = $this.data('equal-wait'),
-                watch = $this.data('equal-watch'),
-                target = $this.data('equal');
-            $this.find(target).equalHeights({'wait': wait, 'watch': watch});
+                options = $this.data(),
+                target = options.equal;
+            $this.find(target).equalHeights(options);
         });
     });
 
