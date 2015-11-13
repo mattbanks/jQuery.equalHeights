@@ -42,6 +42,7 @@
                 }
             }
             watched = res;
+            return this;
         }
 
         if (options.wait || options.equalWait) {
@@ -52,6 +53,7 @@
                 }
                 $this.each(equalHeightsFn);
             }, 100);
+            return this;
         } else {
             return $this.css('height', maxHeight);
         }
