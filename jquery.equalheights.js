@@ -24,10 +24,12 @@
     };
 
     // auto-initialize plugin with data-equal attribute
-    $('[data-equal]').each(function(){
-        var $this = $(this),
-            target = $this.data('equal');
-        return $this.find(target).equalHeights();
+    $(window).load(function() {
+        $('[data-equal]').each(function(){
+            var $this = $(this),
+                target = $this.data('equal');
+            return $this.find(target).equalHeights();
+        });
     });
 
     // auto-initialize plugin with class of equalheight
