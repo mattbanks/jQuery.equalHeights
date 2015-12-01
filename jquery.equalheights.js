@@ -10,48 +10,70 @@
  */
 (function($) {
 
-    var watched = [];
+    var watched = [],
+    calcMaxHeight = function($elems) {
+        var height, maxHeight = 0;
+        $elems.each(function () {
+            height = $(this).innerHeight();
+            if ( height > maxHeight ) { maxHeight = height; }
+        });
+        return maxHeight;
+    },
+    docEl = document.documentElement;
+
     $(window).on('resize', function () {
-        for (var i = 0, l = watched.length; i < l; i++) {
-            if (watched[i]) {
-                $(watched[i]).css('height', 'auto').equalHeights()
+        // Bundle reading and writing styles to reduce synchronous layout / jank
+
+        // Reset heights
+        for (var i = 0, l = watched.length, elems, _w = [], m = []; i < l; i++) {
+            elems = watched[i];
+            // Don't waste time on elements that aren't in the DOM
+            if (elems.length && $.contains(docEl, elems[0]) ) {
+                _w.push(elems);
+                elems.css('height', 'auto');
             }
         }
-    })
+
+        // Calc max height
+        for (i = 0, l = _w.length; i < l; i++) { m[i] = calcMaxHeight(_w[i]); }
+
+        // Set max height
+        for (i = 0; i < l; i++) { _w[i].css('height', m[i]); }
+    });
 
     $.fn.equalHeights = function(options) {
-        var maxHeight = 0,
-            $this = $(this),
-            equalHeightsFn = function() {
-                var height = $(this).innerHeight();
-
-                if ( height > maxHeight ) { maxHeight = height; }
-            };
+        var maxHeight, $this = $(this), i, l, isContained, res, loop;
         options = options || {};
 
-        $this.each(equalHeightsFn);
+        maxHeight = calcMaxHeight($this);
 
-        if (options.watch || options.equalWatch) {
-            watched.push(this)
+        if (options.watch) {
+            for (i = 0, l = watched.length, isContained; i < l; i++) {
+                if ($this.is(watched[i])) {
+                    isContained = true;
+                    break;
+                }
+            }
+            if (!isContained) {
+                watched.push($this);
+            }
         }
 
-        if (options.unwatch || options.equalUnwatch) {
-            for (var i = 0, l = watched.length, res = []; i < l; i++) {
-                if (watched[i].length && !$this.is(watched[i])) {
-                    res.push(watched[i]);
-                }
+        if (options.unwatch) {
+            for (i = 0, l = watched.length, res = []; i < l; i++) {
+                if (!$this.is(watched[i])) { res.push(watched[i]); }
             }
             watched = res;
             return this;
         }
 
-        if (options.wait || options.equalWait) {
-            var loop = setInterval(function() {
+        if (options.wait) {
+            loop = setInterval(function() {
                 if(maxHeight > 0) {
                     clearInterval(loop);
                     return $this.css('height', maxHeight);
                 }
-                $this.each(equalHeightsFn);
+                maxHeight = calcMaxHeight($this);
             }, 100);
             return this;
         } else {
@@ -59,7 +81,7 @@
         }
     };
 
-    // auto-initialize plugin
+    // Auto-initialize plugin
     $(document).on('ready', function() {
        $('[data-equal]').each(function(){
             var $this = $(this),
