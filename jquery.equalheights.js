@@ -19,6 +19,7 @@
         });
         return maxHeight;
     },
+    height = 'height',
     docEl = document.documentElement;
 
     $(window).on('resize', function () {
@@ -30,7 +31,7 @@
             // Don't waste time on elements that aren't in the DOM
             if (elems.length && $.contains(docEl, elems[0]) ) {
                 _w.push(elems);
-                elems.css('height', 'auto');
+                elems.css(height, 'auto');
             }
         }
 
@@ -38,7 +39,7 @@
         for (i = 0, l = _w.length; i < l; i++) { m[i] = calcMaxHeight(_w[i]); }
 
         // Set max height
-        for (i = 0; i < l; i++) { _w[i].css('height', m[i]); }
+        for (i = 0; i < l; i++) { _w[i].css(height, m[i]); }
     });
 
     $.fn.equalHeights = function(options) {
@@ -71,13 +72,13 @@
             loop = setInterval(function() {
                 if(maxHeight > 0) {
                     clearInterval(loop);
-                    return $this.css('height', maxHeight);
+                    return $this.css(height, maxHeight);
                 }
                 maxHeight = calcMaxHeight($this);
             }, 100);
             return this;
         } else {
-            return $this.css('height', maxHeight);
+            return $this.css(height, maxHeight);
         }
     };
 
