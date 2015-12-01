@@ -66,6 +66,7 @@ See `example.html` in examples folder.
 * [betweenbrain](https://github.com/betweenbrain)
 * [Korri](https://github.com/Korri)
 * [pafnuty](https://github.com/pafnuty)
+* [osartun](https://github.com/osartun)
 
 ### Changelog
 
