@@ -43,7 +43,7 @@ Pass in `{watch: true}` if you want to execute `equalHeights` on resize. This ca
 	
 #### Option: `unwatch`
 
-Pass in `{unwatch: true}` to remove a set of elements that are currently watched.
+Pass in `{unwatch: true}` to unwatch a set of elements that are currently watched.
 
 	$('.yourelements').equalHeights({unwatch: true});
 
