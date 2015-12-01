@@ -21,7 +21,7 @@ Alternatively, install with [bower](https://github.com/bower/bower):
 ### Auto Initialize
 
 Add `data-equal="MYELEMENTS"` to the parent container, where MYELEMENTS is div, section, li, whatever you'd like. [See the example](https://github.com/mattbanks/jQuery.equalHeights/blob/master/example/example.html) for more information.
-You can optioanlly specify the options by setting `data-equal-wait="true"` and `data-equal-watch="true"`.
+You can specify options by setting them as a data-attribute, for example: `data-watch="true"`.
 
 ### Manually Initialize
 
@@ -33,13 +33,19 @@ Select whatever elements need equal height. You can optionally pass in an object
 
 If you pass in `{wait: true}` your elements' height will only be equalized as soon as they have layout.
 
-	$('.yourelements').equalHeights({wait: true})
+	$('.yourelements').equalHeights({wait: true});
 
 #### Option: `watch`
 
 Pass in `{watch: true}` if you want to execute `equalHeights` on resize. This can improve the responsiveness of the elements with equalized heights.
 
-	$('.yourelements').equalHeights({watch: true})
+	$('.yourelements').equalHeights({watch: true});
+	
+#### Option: `unwatch`
+
+Pass in `{unwatch: true}` to remove a set of elements that are currently watched.
+
+	$('.yourelements').equalHeights({unwatch: true});
 
 ### Caveats
 
