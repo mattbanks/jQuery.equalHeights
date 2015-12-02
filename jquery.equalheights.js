@@ -1,12 +1,12 @@
 /*!
  * Simple jQuery Equal Heights
  *
- * Copyright (c) 2013 Matt Banks
+ * Copyright (c) 2015 Matt Banks
  * Dual licensed under the MIT and GPL licenses.
  * Uses the same license as jQuery, see:
  * http://docs.jquery.com/License
  *
- * @version 1.5.2
+ * @version 1.5.3
  */
 (function($) {
 
