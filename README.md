@@ -1,6 +1,6 @@
 # jQuery Simple Equal Heights
 
-Version 1.5.2
+Version 1.5.3
 
 ## Summary
 
@@ -40,7 +40,7 @@ If you pass in `{wait: true}` your elements' height will only be equalized as so
 Pass in `{watch: true}` if you want to execute `equalHeights` on resize. This can improve the responsiveness of the elements with equalized heights.
 
 	$('.yourelements').equalHeights({watch: true});
-	
+
 #### Option: `unwatch`
 
 Pass in `{unwatch: true}` to unwatch a set of elements that are currently watched.
@@ -69,6 +69,11 @@ See `example.html` in examples folder.
 * [osartun](https://github.com/osartun)
 
 ### Changelog
+
+#### Version 1.5.3
+
+* major rewrite (props [osartun](https://github.com/osartun))
+* add `watch`, `unwatch`, and `wait` options
 
 #### Version 1.5.2
 
