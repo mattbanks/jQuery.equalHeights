@@ -11,16 +11,35 @@
 (function($) {
 
     $.fn.equalHeights = function() {
-        var maxHeight = 0,
-            $this = $(this);
+        var $this = $(this),
+            curTallest = 0,
+            curRowBegin = 0,
+            rowLength = [],
+            element,
+            topPos = 0;
 
-        $this.each( function() {
-            var height = $(this).innerHeight();
-
-            if ( height > maxHeight ) { maxHeight = height; }
+        return $this.each( function() {
+            element = $(this);
+            // if element is on same row or not
+            topPos = element.offset().top;
+            runFor = function() {
+                for(curDiv = 0; curDiv < rowLength.length; curDiv++) {
+                    rowLength[curDiv].css('min-height', curTallest);
+                }
+            };
+            if(curRowBegin !== topPos) {
+                runFor();
+                rowLength.length = 0;
+                curRowBegin = topPos;
+                curTallest = element.outerHeight();
+                rowLength.push(element);
+            } else {
+                rowLength.push(element);
+                curTallest = (curTallest < element.outerHeight()) ? (element.outerHeight()) : (curTallest);
+            }
+            runFor();
         });
 
-        return $this.css('height', maxHeight);
     };
 
     // auto-initialize plugin
