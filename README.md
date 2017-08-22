@@ -1,6 +1,6 @@
 # jQuery Simple Equal Heights
 
-Version 1.5.2
+Version 1.5.3
 
 ## Summary
 
@@ -21,16 +21,35 @@ Alternatively, install with [bower](https://github.com/bower/bower):
 ### Auto Initialize
 
 Add `data-equal="MYELEMENTS"` to the parent container, where MYELEMENTS is div, section, li, whatever you'd like. [See the example](https://github.com/mattbanks/jQuery.equalHeights/blob/master/example/example.html) for more information.
+You can specify options by setting them as a data-attribute, for example: `data-watch="true"`.
 
 ### Manually Initialize
 
-	$('.yourelements').equalHeights();
+	$('.yourelements').equalHeights([options]);
 
-Select whatever elements need equal height.
+Select whatever elements need equal height. You can optionally pass in an object with one or more options
+
+#### Option: `wait`
+
+If you pass in `{wait: true}` your elements' height will only be equalized as soon as they have layout.
+
+	$('.yourelements').equalHeights({wait: true});
+
+#### Option: `watch`
+
+Pass in `{watch: true}` if you want to execute `equalHeights` on resize. This can improve the responsiveness of the elements with equalized heights.
+
+	$('.yourelements').equalHeights({watch: true});
+
+#### Option: `unwatch`
+
+Pass in `{unwatch: true}` to unwatch a set of elements that are currently watched.
+
+	$('.yourelements').equalHeights({unwatch: true});
 
 ### Caveats
 
-If using @font-face or Google Web Fonts, you may need to wrap the function call in a `setTimeout` for 100ms-200ms (`jQuery.height()` needs to fire after the font is rendered to properly calculate the height).
+If using @font-face or Google Web Fonts, you may need to wrap the function call in a `setTimeout` for 100ms-200ms or call it on `window` `load` (`jQuery.height()` needs to fire after the font is rendered to properly calculate the height). Otherwise even the `wait` option could fail here as the element might be rendered and have layout before the fonts are loaded and applied.
 
 ## Requirements/Browsers
 
@@ -47,8 +66,14 @@ See `example.html` in examples folder.
 * [betweenbrain](https://github.com/betweenbrain)
 * [Korri](https://github.com/Korri)
 * [pafnuty](https://github.com/pafnuty)
+* [osartun](https://github.com/osartun)
 
 ### Changelog
+
+#### Version 1.5.3
+
+* major rewrite (props [osartun](https://github.com/osartun))
+* add `watch`, `unwatch`, and `wait` options
 
 #### Version 1.5.2
 
@@ -56,7 +81,7 @@ See `example.html` in examples folder.
 
 #### Version 1.5.1
 
-* fix bug with $.height() in jQuery 1.8+ with double padding when `box-siding` is set to `border-box`
+* fix bug with $.height() in jQuery 1.8+ with double padding when `box-sizing` is set to `border-box`
 
 #### Version 1.5.0
 
